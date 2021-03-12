@@ -33,7 +33,7 @@
                 <label for="username">Username
                     <span class="required-indicator">*</span>
                 </label>
-                <input type="text" name="username" value="${this.user.username}" required="" id="username">
+                <g:textField type="text" name="username" value="${this.user.username}"/>
             </div>
             <div class="fieldcontain">
                 <label>Role</label>

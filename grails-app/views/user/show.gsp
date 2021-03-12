@@ -21,23 +21,28 @@
         </li>
 
         <li class="fieldcontain">
+            <span class="property-label">Role</span>
+            <div class="property-value">${myRole.authority}</div>
+        </li>
+
+        <li class="fieldcontain">
             <span id="passwordExpired-label" class="property-label">Password Expired</span>
-            <div class="property-value" aria-labelledby="passwordExpired-label">${this.user.passwordExpired}</div>
+            <g:checkBox name="passwordExpired" value="${this.user.passwordExpired}" disabled="true"/>
         </li>
 
         <li class="fieldcontain">
             <span id="accountLocked-label" class="property-label">Account Locked</span>
-            <div class="property-value" aria-labelledby="accountLocked-label">${this.user.accountLocked}</div>
+            <g:checkBox name="accountLocked" value="${this.user.accountLocked}" disabled="true"/>
         </li>
 
         <li class="fieldcontain">
             <span id="accountExpired-label" class="property-label">Account Expired</span>
-            <div class="property-value" aria-labelledby="accountExpired-label">${this.user.accountExpired}</div>
+            <g:checkBox name="accountExpired" value="${this.user.accountExpired}" disabled="true"/>
         </li>
 
         <li class="fieldcontain">
             <span id="enabled-label" class="property-label">Enabled</span>
-            <div class="property-value" aria-labelledby="enabled-label">${this.user.enabled}</div>
+            <g:checkBox name="enabled" value="${this.user.enabled}" disabled="true"/>
         </li>
 
         <li class="fieldcontain">
@@ -52,12 +57,6 @@
                 </g:each>
             </ul>
         </li>
-
-        <li class="fieldcontain">
-            <span class="property-label">Role</span>
-            <div class="property-value">${myRole.authority}</div>
-        </li>
-
     </ol>
 
     <g:form resource="${this.user}" method="DELETE">
