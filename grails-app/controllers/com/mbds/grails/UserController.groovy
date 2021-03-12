@@ -1,5 +1,7 @@
 package com.mbds.grails
 
+import grails.gorm.transactions.Transactional
+import grails.plugin.springsecurity.annotation.Secured
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
@@ -9,19 +11,26 @@ class UserController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    @Secured(['ROLE_ADMIN', 'ROLE_MODO'])
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond userService.list(params), model:[userCount: userService.count()]
     }
 
+    @Secured(['ROLE_ADMIN', 'ROLE_MODO'])
     def show(Long id) {
-        respond userService.get(id)
+        User user = userService.get(id)
+        def roleId = UserRole.findByUser(user).roleId
+        Role userRole = Role.get(roleId)
+        respond user, model: [myRole: userRole]
     }
 
+    @Secured(['ROLE_ADMIN'])
     def create() {
-        respond new User(params)
+        respond new User(params), model: [rolesList: Role.list()]
     }
 
+    @Secured(['ROLE_ADMIN'])
     def save(User user) {
         if (user == null) {
             notFound()
@@ -30,6 +39,11 @@ class UserController {
 
         try {
             userService.save(user)
+            Integer roleId = params.role.toInteger()
+            Role newUserRole = Role.findById(roleId)
+
+            UserRole.create(user,newUserRole,true)
+
         } catch (ValidationException e) {
             respond user.errors, view:'create'
             return
@@ -37,17 +51,26 @@ class UserController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), user.id])
-                redirect user
+                //Use userId for redirect method
+                Integer newUserId = User.findByUsername(user.username).id
+
+                flash.message = message(code: 'default.created.message', args: [message(code: 'user.username', default: 'User'), user.id])
+                redirect(action: "show", id: newUserId)
             }
             '*' { respond user, [status: CREATED] }
         }
     }
 
+    @Secured(['ROLE_ADMIN', 'ROLE_MODO'])
     def edit(Long id) {
-        respond userService.get(id)
+        def user = userService.get(id)
+        def userRoleID = UserRole.findByUser(user).getRole().id
+        def role = Role.get(userRoleID)
+
+        respond user, model: [rolesList: Role.list(), userRole: role]
     }
 
+    @Secured(['ROLE_ADMIN', 'ROLE_MODO'])
     def update(User user) {
         if (user == null) {
             notFound()
@@ -55,7 +78,14 @@ class UserController {
         }
 
         try {
-            userService.save(user)
+            UserRole.withTransaction {
+                Role userNewRole = Role.findById params.role
+                Role userOldRole = Role.findById(user.id)
+                userService.save(user)
+                UserRole.remove(user,userOldRole)
+                UserRole.create(user,userNewRole)
+            }
+
         } catch (ValidationException e) {
             respond user.errors, view:'edit'
             return
@@ -70,13 +100,19 @@ class UserController {
         }
     }
 
+    @Secured(['ROLE_ADMIN'])
     def delete(Long id) {
         if (id == null) {
             notFound()
             return
         }
 
-        userService.delete(id)
+        UserRole.withTransaction {
+            def user = User.get(id)
+            def role = UserRole.findByUser(user).role
+            UserRole.remove(user,role)
+            user.delete()
+        }
 
         request.withFormat {
             form multipartForm {
