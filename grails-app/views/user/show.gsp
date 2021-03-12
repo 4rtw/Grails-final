@@ -16,11 +16,6 @@
     <ol class="property-list user">
 
         <li class="fieldcontain">
-            <span id="password-label" class="property-label">Password</span>
-            <div class="property-value" aria-labelledby="password-label">${this.user.password}</div>
-        </li>
-
-        <li class="fieldcontain">
             <span id="username-label" class="property-label">Username</span>
             <div class="property-value" aria-labelledby="username-label">${this.user.username}</div>
         </li>
