@@ -17,10 +17,10 @@
         <table>
             <thead>
             <tr>
-                <th class="sortable"><a href="/projet/user/index?sort=username&amp;max=10&amp;order=asc">Username</a></th>
-                <th class="sortable"><a href="/projet/user/index?sort=accountLocked&amp;max=10&amp;order=asc">Account Locked</a></th>
-                <th class="sortable"><a href="/projet/user/index?sort=accountExpired&amp;max=10&amp;order=asc">Account Expired</a></th>
-                <th class="sortable"><a href="/projet/user/index?sort=enabled&amp;max=10&amp;order=asc">Enabled</a></th>
+                <th class="sortable"><g:link controller="user" action="index" params="[sort:'username' ,max: '10', order: 'desc']">Username</g:link></th>
+                <th class="sortable"><g:link controller="user" action="index" params="[sort:'accountLocked' ,max: '10', order: 'desc']">Account Locked</g:link></th>
+                <th class="sortable"><g:link controller="user" action="index" params="[sort:'accountExpired',max:'10', order:'asc']">Account Expired</g:link></th>
+                <th class="sortable"><g:link controller="user" action="index" params="[sort:'enabled',max:'10',order:'asc']">Enabled</g:link></th>
             </thead>
             <tbody>
                 <g:each in="${userList}" var="user">
