@@ -27,8 +27,8 @@
                     <tr>
                         <td><g:link controller="user" action="show" id="${user.id}">${user.username}</g:link></td>
                         <td><g:checkBox name="accountLocked" value="${user.accountLocked}" disabled="true"/></td>
-                        <td><g:checkBox name="accountLocked" value="${user.accountExpired}" disabled="true"/></td>
-                        <td><g:checkBox name="accountLocked" value="${user.enabled}" disabled="true"/></td>
+                        <td><g:checkBox name="accountExpired" value="${user.accountExpired}" disabled="true"/></td>
+                        <td><g:checkBox name="enabled" value="${user.enabled}" disabled="true"/></td>
                     </tr>
                 </g:each>
             </tbody>
