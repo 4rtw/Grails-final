@@ -22,7 +22,7 @@ class UserController {
         User user = userService.get(id)
         def roleId = UserRole.findByUser(user).roleId
         Role userRole = Role.get(roleId)
-        respond user, model: [myRole: userRole]
+        respond user, model: [myRole: userRole, annonces: Annonce.findAllByAuthor(user)]
     }
 
     @Secured(['ROLE_ADMIN'])
@@ -79,10 +79,14 @@ class UserController {
 
         try {
             UserRole.withTransaction {
+
                 Role userNewRole = Role.findById params.role
-                Role userOldRole = Role.findById(user.id)
+
+                UserRole currentUserRole = UserRole.findByUser(user)
+                Role userCurrentRole = currentUserRole.role
+
                 userService.save(user)
-                UserRole.remove(user,userOldRole)
+                UserRole.remove(user,userCurrentRole)
                 UserRole.create(user,userNewRole)
             }
 

@@ -31,6 +31,6 @@ class User implements Serializable {
 
     static mapping = {
         annonces cascade: 'all-delete-orphan'
-	    password column: '`password`'
+        password column: '`password`'
     }
 }
