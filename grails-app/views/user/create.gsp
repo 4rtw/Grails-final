@@ -22,43 +22,38 @@
     <g:form resource="${this.user}" method="POST">
         <fieldset class="form">
             <div class="fieldcontain required">
-                <label for="password">Password
-                    <span class="required-indicator">*</span>
-                </label>
-                <input type="password" name="password" required="" value="" id="password">
-            </div>
-            <div class="fieldcontain required">
                 <label for="username">Username
                     <span class="required-indicator">*</span>
                 </label>
-                <input type="text" name="username" value="" required="" id="username">
+                <g:field type="text" name="username" id="username"/>
             </div>
+
+            <div class="fieldcontain required">
+                <label for="password">Password
+                    <span class="required-indicator">*</span>
+                </label>
+                <g:field type="password" name="password" required="true" id="password"/>
+            </div>
+
             <div class="fieldcontain">
                 <label>Role</label>
                 <g:select from="${rolesList}" name="role" optionKey="id" optionValue="authority"/>
             </div>
             <div class="fieldcontain">
                 <label for="passwordExpired">Password Expired</label>
-                <input type="hidden" name="_passwordExpired">
-                <input type="checkbox" name="passwordExpired" id="passwordExpired">
+                <g:checkBox name="passwordExpired" id="passwordExpired"/>
             </div>
             <div class="fieldcontain">
                 <label for="accountLocked">Account Locked</label>
-                <input type="hidden" name="_accountLocked">
-                <input type="checkbox" name="accountLocked" id="accountLocked">
+                <g:checkBox name="accountLocked" id="accountLocked"/>
             </div>
             <div class="fieldcontain">
                 <label for="accountExpired">Account Expired</label>
-                <input type="hidden" name="_accountExpired">
-                <input type="checkbox" name="accountExpired" id="accountExpired">
+                <g:checkBox name="accountExpired" id="accountExpired"/>
             </div>
             <div class="fieldcontain">
                 <label for="enabled">Enabled</label>
-                <input type="hidden" name="_enabled">
-                <input type="checkbox" name="enabled" checked="checked" id="enabled">
-            </div>
-            <div class="fieldcontain">
-                <label for="annonces">Annonces</label><a href="/projet/annonce/create?user.id=">Add Annonce</a>
+                <g:checkBox name="enabled" id="enabled"/>
             </div>
         </fieldset>
         <fieldset class="buttons">

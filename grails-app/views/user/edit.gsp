@@ -41,22 +41,18 @@
             </div>
             <div class="fieldcontain">
                 <label for="passwordExpired">Password Expired</label>
-                <input type="hidden" name="_passwordExpired">
                 <g:checkBox name="passwordExpired" id="passwordExpired" value="${this.user.passwordExpired}"/>
             </div>
             <div class="fieldcontain">
                 <label for="accountLocked">Account Locked</label>
-                <input type="hidden" name="_accountLocked">
                 <g:checkBox name="accountLocked" id="accountLocked" value="${this.user.accountLocked}"/>
             </div>
             <div class="fieldcontain">
                 <label for="accountExpired">Account Expired</label>
-                <input type="hidden" name="_accountExpired">
                 <g:checkBox name="accountExpired" id="accountExpired" value="${this.user.accountExpired}"/>
             </div>
             <div class="fieldcontain">
                 <label for="enabled">Enabled</label>
-                <input type="hidden" name="_enabled">
                 <g:checkBox name="enabled" id="enabled" value="${this.user.enabled}"/>
             </div>
 
