@@ -13,7 +13,52 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${annonceList}" />
+            <div class="table-responsive" id="listeannonce">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Illustrations
+                        </th>
+                        <th>
+                            User name
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <g:each in="${annonceList}" var="annonce">
+                        <tr>
+                            <td>
+                                <g:link action="show" id="${annonce.id}">${annonce.title}</g:link>
+                            </td>
+                            <td>
+                                ${annonce.description}
+                            </td>
+                            <td>
+                                ${annonce.price}
+                            </td>
+                            <td>
+                                <g:each in="${annonce.illustrations}" var="illustration">
+                                    <img src="${baseUrl + illustration.filename}" class="imagesmallsize"/>
+                                </g:each>
+                            </td>
+                            <td>
+                                ${annonce.author.username}
+                            </td>
+                        </tr>
+                    </g:each>
+                    </tbody>
+                </table>
+            </div>
 
             <div class="pagination">
                 <g:paginate total="${annonceCount ?: 0}" />

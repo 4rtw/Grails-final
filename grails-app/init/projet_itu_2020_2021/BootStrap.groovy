@@ -25,15 +25,16 @@ class BootStrap {
 
         User.list().each {
             User userInstance ->
-                (1..5).each {
+                (1..2).each {
                     Integer annonceIdx ->
                         def annonceInstance = new Annonce(
                                 title: "Titre de l'annonce $annonceIdx",
                                 description: "Description de l'annonce $annonceIdx",
                                 price: 100 * annonceIdx
                         )
-                        (1..5).each {
-                            annonceInstance.addToIllustrations(new Illustration(filename: "grails.svg"))
+                        (1..2).each {
+                            def illustrationname = "grails" + userInstance.id.toString() + annonceIdx.toString() + it.toString() + ".svg"
+                            annonceInstance.addToIllustrations(new Illustration(filename: illustrationname))
                         }
                         userInstance.addToAnnonces(annonceInstance)
 

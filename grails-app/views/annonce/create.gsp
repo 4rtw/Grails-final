@@ -25,14 +25,27 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form controller="annonce" action="save" method="POST">
+            <g:uploadForm controller="annonce" action="save" method="POST">
                 <fieldset class="form">
-                    <f:all bean="annonce"/>
+                    <f:all bean="annonce" except="illustrations,author"/>
                 </fieldset>
+                <div class="fieldcontain">
+                    <label for="myFile">Upload an image</label>
+                    <input style="display: inline" type="file" name="myFile" id="myFile" onchange="showPreview(event)"/>
+                    <div class="preview">
+                        <img class="imgprev" id="file-ip-1-preview">
+                    </div>
+                </div>
+                <div class="fieldcontain required">
+                    <label for="author">Author
+                        <span class="required-indicator">*</span>
+                    </label>
+                    <g:select name="idauthor" id="idauthor" from="${userList}" optionKey="id" optionValue="username" />
+                </div>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>
-            </g:form>
+            </g:uploadForm>
         </div>
     </body>
 </html>
