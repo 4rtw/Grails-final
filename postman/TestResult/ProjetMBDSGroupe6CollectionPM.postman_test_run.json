@@ -1,0 +1,326 @@
+{
+	"id": "26fda25b-d61a-4444-88cd-8cf5bbc63c03",
+	"name": "ProjetMBDSGroupe6CollectionPM",
+	"timestamp": "2021-03-14T09:15:17.953Z",
+	"collection_id": "c951478e-9d83-41c7-a949-b782f3ce6f17",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "675aef45-3f20-4377-85b9-7c53d41c16fb",
+			"name": "Lister les autheurs",
+			"url": "http://localhost:8081/projet/api/users",
+			"time": 26,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				26
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "168753e1-a9c5-4aac-8929-41512fec0f97",
+			"name": "1 - Obtenir les infos d'un autheur",
+			"url": "http://localhost:8081/projet/api/users/2",
+			"time": 19,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				19
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a68f584b-c626-44c0-8261-8e49f6bc1968",
+			"name": "2 - Obtenir les infos d'un autheur",
+			"url": "http://localhost:8081/projet/api/user/2",
+			"time": 17,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				17
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "2c6bcd0c-a86f-4455-88c9-4bc6d1410d12",
+			"name": "Lister les annonces",
+			"url": "http://localhost:8081/projet/api/annonces",
+			"time": 50,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				50
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6d140662-ad6d-42fa-b491-78fb2b9c759a",
+			"name": "1 - Obtenir les infos d'une annonce",
+			"url": "http://localhost:8081/projet/api/annonces/1",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				13
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "04a5e8b7-1dd4-482d-830c-1614ad74668d",
+			"name": "2 - Obtenir les infos d'une annonce",
+			"url": "http://localhost:8081/projet/api/annonce/1",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				14
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "efb46005-53fe-4f49-95e8-d7ef3146b037",
+			"name": "Ajouter un autheur",
+			"url": "http://localhost:8081/projet/api/users",
+			"time": 166,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				166
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "3a6b559f-0ea6-4735-a9a8-c51fc0e25ae1",
+			"name": "Ajouter une annonce",
+			"url": "http://localhost:8081/projet/api/annonces",
+			"time": 324,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				324
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "bc1ca17b-21ae-4ab3-ad3a-ed4f140307da",
+			"name": "Modifier partiellement un autheur",
+			"url": "http://localhost:8081/projet/api/user/2",
+			"time": 16,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				16
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9ee46a0d-bccc-4fe1-817c-329b84ad7702",
+			"name": "Modifier partiellement une annonce",
+			"url": "http://localhost:8081/projet/api/annonce/2",
+			"time": 18,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				18
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f04922aa-18bf-49aa-b341-9effa95b0d0e",
+			"name": "Modifier une annonce",
+			"url": "http://localhost:8081/projet/api/annonce/2",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				13
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a00e781c-b8df-422b-ae01-dc71b72ece42",
+			"name": "Modifier un autheur",
+			"url": "http://localhost:8081/projet/api/user/2",
+			"time": 105,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				105
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b0504175-3f2c-4132-aeb4-e2ca36fea24a",
+			"name": "Supprimer un auteur",
+			"url": "http://localhost:8081/projet/api/user/3",
+			"time": 785,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				785
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b499a8d8-1169-44a4-9ab2-f52c65a21fc8",
+			"name": "Supprimer une annonce",
+			"url": "http://localhost:8081/projet/api/annonce/2",
+			"time": 26,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				26
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1592,
+	"collection": {
+		"requests": [
+			{
+				"id": "675aef45-3f20-4377-85b9-7c53d41c16fb",
+				"method": "GET"
+			},
+			{
+				"id": "168753e1-a9c5-4aac-8929-41512fec0f97",
+				"method": "GET"
+			},
+			{
+				"id": "a68f584b-c626-44c0-8261-8e49f6bc1968",
+				"method": "GET"
+			},
+			{
+				"id": "2c6bcd0c-a86f-4455-88c9-4bc6d1410d12",
+				"method": "GET"
+			},
+			{
+				"id": "6d140662-ad6d-42fa-b491-78fb2b9c759a",
+				"method": "GET"
+			},
+			{
+				"id": "04a5e8b7-1dd4-482d-830c-1614ad74668d",
+				"method": "GET"
+			},
+			{
+				"id": "efb46005-53fe-4f49-95e8-d7ef3146b037",
+				"method": "POST"
+			},
+			{
+				"id": "3a6b559f-0ea6-4735-a9a8-c51fc0e25ae1",
+				"method": "POST"
+			},
+			{
+				"id": "bc1ca17b-21ae-4ab3-ad3a-ed4f140307da",
+				"method": "PATCH"
+			},
+			{
+				"id": "9ee46a0d-bccc-4fe1-817c-329b84ad7702",
+				"method": "PATCH"
+			},
+			{
+				"id": "f04922aa-18bf-49aa-b341-9effa95b0d0e",
+				"method": "PUT"
+			},
+			{
+				"id": "a00e781c-b8df-422b-ae01-dc71b72ece42",
+				"method": "PUT"
+			},
+			{
+				"id": "b0504175-3f2c-4132-aeb4-e2ca36fea24a",
+				"method": "DELETE"
+			},
+			{
+				"id": "b499a8d8-1169-44a4-9ab2-f52c65a21fc8",
+				"method": "DELETE"
+			}
+		]
+	}
+}
