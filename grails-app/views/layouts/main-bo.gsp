@@ -40,12 +40,12 @@
                         </g:link>
                     </li>
                     
-                    <li class="nav-item active active-pro">
+                    <!--<li class="nav-item active active-pro">
                         <a class="nav-link active" href="javascript:;">
                             <i class="nc-icon nc-alien-33"></i>
                             <p>Upgrade plan</p>
                         </a>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
         </div>
@@ -53,7 +53,7 @@
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#pablo">Home</a>
+                    <a class="navbar-brand" href="/projet">Home</a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -108,9 +108,12 @@
                                 </div>
                             </li>-->
                             <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
-                                    <span class="no-icon">Log out</span>
-                                </a>
+%{--                                <a class="nav-link" href="/logout/index">--}%
+%{--                                    <span class="no-icon">Se deconnecter</span>--}%
+%{--                                </a>--}%
+                                <g:form controller="logout">
+                                    <g:submitButton class="dropdown-item navbar-dark color-light" name="Submit" value="Se deconnecter" />
+                                </g:form>
                             </li>
                         </ul>
                     </div>
@@ -130,37 +133,37 @@
             </div>
             <footer class="footer">
                 <div class="container-fluid">
-                    <nav>
-                        <ul class="footer-menu">
-                            <li>
-                                <a href="#">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Company
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Blog
-                                </a>
-                            </li>
-                        </ul>
-                        <p class="copyright text-center">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>
-                            <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-                        </p>
-                    </nav>
+%{--                    <nav>--}%
+%{--                        <ul class="footer-menu">--}%
+%{--                            <li>--}%
+%{--                                <a href="#">--}%
+%{--                                    Home--}%
+%{--                                </a>--}%
+%{--                            </li>--}%
+%{--                            <li>--}%
+%{--                                <a href="#">--}%
+%{--                                    Company--}%
+%{--                                </a>--}%
+%{--                            </li>--}%
+%{--                            <li>--}%
+%{--                                <a href="#">--}%
+%{--                                    Portfolio--}%
+%{--                                </a>--}%
+%{--                            </li>--}%
+%{--                            <li>--}%
+%{--                                <a href="#">--}%
+%{--                                    Blog--}%
+%{--                                </a>--}%
+%{--                            </li>--}%
+%{--                        </ul>--}%
+%{--                        <p class="copyright text-center">--}%
+%{--                            ©--}%
+%{--                            <script>--}%
+%{--                                document.write(new Date().getFullYear())--}%
+%{--                            </script>--}%
+%{--                            <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web--}%
+%{--                        </p>--}%
+%{--                    </nav>--}%
                 </div>
             </footer>
         </div>

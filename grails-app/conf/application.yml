@@ -131,5 +131,5 @@ server:
     contextPath: /projet
 annonces:
     illustrations:
-        path:  "C:/Users/Ando Lalaina/IdeaProjects/projet-cours/grails-app/assets/images/"
+        path:  "E:/1-ITU/M2/Projet/Grails/tp-annonce/grails-app/assets/images"
         url: "http://localhost:8081/projet/assets/"
