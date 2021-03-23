@@ -39,6 +39,11 @@
                              Annonces
                         </g:link>
                     </li>
+                    <li class="nav-item active">
+                        <g:link class="nav-link" controller="user" action="index">
+                            Utilisateurs
+                        </g:link>
+                    </li>
                     
                     <!--<li class="nav-item active active-pro">
                         <a class="nav-link active" href="javascript:;">

@@ -56,6 +56,23 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#"><i class="fa fa-list fa-fw"></i> User
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <g:link controller="user" action="index">
+                                Liste
+                            </g:link>
+                        </li>
+                        <li>
+                            <g:link controller="user" action="create">
+                                Ajout
+                            </g:link>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
