@@ -42,7 +42,7 @@
                     <li class="fieldcontain">
                         <span id="illustrations-label" class="property-label">Illustrations</span>
                         <g:each in="${annonce.illustrations}" var="illustration">
-                            <img src="${baseUrl + illustration.filename}" />
+                            <img src="${baseUrl + illustration.filename}" class="imagesmallsize"/>
                         </g:each>
                     </li>
 

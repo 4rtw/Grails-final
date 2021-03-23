@@ -56,23 +56,31 @@
                 </label><input type="number decimal" name="price" value="${annonce.price}" required="" min="0.0" id="price">
             </div>
 
-            <div class="fieldcontain">
+            <div class="fieldcontain" style="display: flex;">
                 <label for="illustrations">Illustrations</label>
                 <g:each in="${annonce.illustrations}" var="illustration">
-                    <img src="${baseUrl + illustration.filename}" />
+                    <div style="display: flex;" class="divimagesmallsize">
+                        <img src="${baseUrl + illustration.filename}" class="imagesmallsize"/>
+                        <g:link controller="annonce" action="deleteIllustration" resource="annonce" params="[annonceId: annonce.id, illustrationId: illustration.id]" style="text-decoration: none">
+                            <i class="fa fa-close"></i>
+                        </g:link>
+                    </div>
                 </g:each>
             </div>
 
             <div class="fieldcontain">
-                <label for="file">Upload</label>
-                <input style="display: inline" type="file" name="file" id="file"/>
+                <label for="myFile">Upload an image</label>
+                <input style="display: inline" type="file" name="myFile" id="myFile" onchange="showPreview(event)"/>
+                <div class="preview">
+                    <img class="imgprev" id="file-ip-1-preview">
+                </div>
             </div>
 
             <div class="fieldcontain required">
                 <label for="author">Author
                     <span class="required-indicator">*</span>
                 </label>
-                <g:select name="author.id" from="${userList}" optionKey="id" optionValue="username" />
+                <g:select name="idauthor" id="idauthor" from="${userList}" optionKey="id" optionValue="username" />
             </div>
         </fieldset>
         <fieldset class="buttons">

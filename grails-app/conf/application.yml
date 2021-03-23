@@ -65,6 +65,9 @@ grails:
             maxsize: 1000
     controllers:
         defaultScope: singleton
+        upload:
+            maxFileSize: 26214400
+            maxRequestSize: 26214400
     converters:
         encoding: UTF-8
     views:
@@ -131,5 +134,5 @@ server:
     contextPath: /projet
 annonces:
     illustrations:
-        path:  "E:/1-ITU/M2/Projet/Grails/tp-annonce/grails-app/assets/images"
+        path:  "D:/MBDS/MrGalli/RepFinal/tp-annonce/grails-app/assets/images/"
         url: "http://localhost:8081/projet/assets/"
