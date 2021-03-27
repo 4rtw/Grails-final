@@ -9,6 +9,8 @@
 *
 *= require bootstrap.min
 *= require light-bootstrap-dashboard
+*= require modal-image
+*= require bootstrap.override
 *= require demo
 *= require_self
 */
@@ -28,4 +30,127 @@
     width:250px;
     display:none;
     margin:20px;
+}
+
+.tp-toolbar {
+    display: flex;
+    flex-direction: row;
+    padding: 0 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.tp-toolbar form {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    margin: 0 10px;
+}
+
+.tp-toolbar label,
+.tp-toolbar input,
+.tp-toolbar button,
+.tp-toolbar select {
+    align-self: baseline;
+}
+
+.tp-toolbar .filter {
+    display: flex;
+    flex-direction: row;
+}
+
+.tp-toolbar-action {
+    padding-top: 22.5px;
+    padding-right: 10px;
+    flex-grow: 8;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.tp-toolbar-action a {
+    margin-left: 5px;
+}
+
+/* Style the list */
+.tp-breadcrumb {
+    list-style: none;
+    min-width: 250px;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+/* Display list items side by side */
+.tp-breadcrumb li {
+    display: inline;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+.tp-breadcrumb li+li:before {
+    padding: 8px;
+    color: #888888;
+    content: "/\00a0";
+}
+
+.tp-breadcrumb li:last-child a:hover {
+    text-decoration: none;
+}
+
+/* Add a color to all links inside the list */
+.tp-breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+.tp-breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+/** Form **/
+.tp-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/** annonce detail page **/
+.tp-detail-annonce {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.tp-detail-annonce .left-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.tp-detail-annonce .right-section {
+    width: 100%;
+}
+
+.tp-img-container {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.tp-illustration-img {
+    padding: 10px;
+}
+
+.tp-label {
+    color: #9A9A9A;
+    text-transform: uppercase;
+}
+
+.tp-illustration-img:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.tp-header .tp-toolbar-action {
+    padding-top: 18px;
 }
