@@ -6,9 +6,14 @@
     <title><g:message code="default.create.label" args="[entityName]" /></title>
 </head>
 <body>
-<a href="#create-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+%{--<a href="#create-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>--}%
 <div id="create-user" class="content scaffold-create" role="main">
-    <h1><g:message code="default.create.label" args="[entityName]" /></h1>
+    <div class="tp-header">
+        <h3><g:message code="default.create.label" args="[entityName]" /></h3>
+        <div class="tp-toolbar-action" style="margin-bottom: 10px">
+            <a href="/projet/user" class="btn btn-secondary">List</a>
+        </div>
+    </div>
     <g:if test="${flash.message}">
         <div class="message" role="status">${flash.message}</div>
     </g:if>
@@ -21,44 +26,46 @@
     </g:hasErrors>
     <g:form resource="${this.user}" method="POST">
         <fieldset class="form">
-            <div class="fieldcontain required">
-                <label for="username">Username
+            <div class="tp-field fieldcontain required">
+                <label class="tp-label" for="username">Username
                     <span class="required-indicator">*</span>
                 </label>
-                <g:field type="text" name="username" id="username"/>
+                <g:field class="form-control" type="text" name="username" id="username"/>
             </div>
 
-            <div class="fieldcontain required">
-                <label for="password">Password
+            <div class="tp-field fieldcontain required">
+                <label class="tp-label" for="password">Password
                     <span class="required-indicator">*</span>
                 </label>
-                <g:field type="password" name="password" required="true" id="password"/>
+                <g:field class="form-control" type="password" name="password" required="true" id="password"/>
             </div>
 
-            <div class="fieldcontain">
-                <label>Role</label>
-                <g:select from="${rolesList}" name="role" optionKey="id" optionValue="authority"/>
+            <div class="tp-field fieldcontain">
+                <label class="tp-label">Role</label>
+                <g:select class="form-control" from="${rolesList}" name="role" optionKey="id" optionValue="authority"/>
             </div>
-            <div class="fieldcontain">
-                <label for="passwordExpired">Password Expired</label>
-                <g:checkBox name="passwordExpired" id="passwordExpired"/>
+            <div class="fieldcontain form-group">
+                <g:checkBox class="form-check-input" name="passwordExpired" id="passwordExpired"/>
+                <label class="tp-label" for="passwordExpired">Password Expired</label>
             </div>
-            <div class="fieldcontain">
-                <label for="accountLocked">Account Locked</label>
-                <g:checkBox name="accountLocked" id="accountLocked"/>
+            <div class="fieldcontain form-group">
+                <g:checkBox class="form-check-input" name="accountLocked" id="accountLocked"/>
+                <label class="tp-label" for="accountLocked">Account Locked</label>
             </div>
-            <div class="fieldcontain">
-                <label for="accountExpired">Account Expired</label>
-                <g:checkBox name="accountExpired" id="accountExpired"/>
+            <div class="fieldcontain form-group">
+                <g:checkBox class="form-check-input" name="accountExpired" id="accountExpired"/>
+                <label class="tp-label" for="accountExpired">Account Expired</label>
             </div>
-            <div class="fieldcontain">
-                <label for="enabled">Enabled</label>
-                <g:checkBox name="enabled" id="enabled"/>
+            <div class="fieldcontain form-group">
+                <g:checkBox class="form-check-input" name="enabled" id="enabled"/>
+                <label class="tp-label" for="enabled">Enabled</label>
             </div>
         </fieldset>
-        <fieldset class="buttons">
-            <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-        </fieldset>
+        <div class="tp-toolbar-action">
+            <fieldset class="buttons">
+                <g:submitButton name="create" class="save btn btn-success" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+            </fieldset>
+        </div>
     </g:form>
 </div>
 </body>
