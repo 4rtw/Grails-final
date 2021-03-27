@@ -18,19 +18,22 @@ Ce projet a été réalisé par les étudiants du groupe 6
 ###### Sécurité  
 
 - [x] Couche de sécurité `spring-security-core`  
-- [x] 3 rôles `ADMIN` `MODERATOR` `CLIENT`  
+- [x] 3 rôles disponibles`ADMIN` `MODERATOR` `CLIENT`  
 - [x] Seuls l'user avec le rôle `ADMIN` et `MODERATOR` peuvent accéder au backend  
 - [x] `Login` et `Logout`  
 ###### Fonctionnalités  
 - [x] Gestion des annonces avec leurs illustrations  
 - [x] Toutes les opérations `CRUD` sur les **utilisateurs**, les **annonces**, les **illustrations**  
 ###### Les Bonus (selon le cahier des charges)  
-- [ ] Sécurité `spring-security-rest`  
+- [x] Sécurité `spring-security-rest`  
 - [x] Moteur de recherche pour filtrer les annonces sur leur titre  
 - [ ] Déployement sur Heroku  
 ##### b) Frontend
 - [ ] Aucune réalisation
 ##### c) API Rest
+###### Sécurité
+- [x] Sécurité `spring-security-rest`  
+###### Fonctionnalités
 - [x] Disponible sur l'adresse [http://localhost:8081/projet/api](http://localhost:8081/projet/api)
 - [x] Capable de renvoyer du `JSON`
 - [X] GET/POST/PUT/PATCH/DELETE sur l'(es) **annonce(s)** et l'(es) **utilisateur(s)**
