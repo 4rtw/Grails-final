@@ -23,6 +23,7 @@
             <thead>
             <tr>
                 <th class="sortable"><g:link controller="user" action="index" params="[sort:'username' ,max: '10', order: 'desc']">Username</g:link></th>
+                <th class="sortable"><g:link controller="user" action="index" params="[sort:'username' ,max: '10', order: 'desc']">Password Expired</g:link></th>
                 <th class="sortable"><g:link controller="user" action="index" params="[sort:'accountLocked' ,max: '10', order: 'desc']">Account Locked</g:link></th>
                 <th class="sortable"><g:link controller="user" action="index" params="[sort:'accountExpired',max:'10', order:'asc']">Account Expired</g:link></th>
                 <th class="sortable"><g:link controller="user" action="index" params="[sort:'enabled',max:'10',order:'asc']">Enabled</g:link></th>
@@ -33,6 +34,7 @@
                 <g:each in="${userList}" var="user">
                     <tr>
                         <td><g:link controller="user" action="show" id="${user.id}">${user.username}</g:link></td>
+                        <td>${user.passwordExpired}</td>
                         <td>${user.accountLocked}</td>
                         <td>${user.accountExpired}</td>
                         <td>${user.enabled}</td>
