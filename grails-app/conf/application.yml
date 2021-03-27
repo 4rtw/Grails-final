@@ -134,5 +134,5 @@ server:
     contextPath: /projet
 annonces:
     illustrations:
-        path:  "D:/MBDS/MrGalli/RepFinal/tp-annonce/grails-app/assets/images/"
+        path:  "D:/MBDS/MrGalli/tp-annonce/grails-app/assets/images/"
         url: "http://localhost:8081/projet/assets/"

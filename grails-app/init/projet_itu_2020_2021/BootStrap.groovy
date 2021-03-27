@@ -9,6 +9,11 @@ import com.mbds.grails.UserRole
 
 class BootStrap {
 
+    def random = new Random()
+    def intTabVal = 0
+    def annonceNames = ["Samsung s20", "Violon", "Fourchette", "Olive", "Liquide vaisselle", "Ecouteur"]
+    def annonceDescription = ["Un super téléphone", "Le violon du plus grand musicien", "Couvert en or", "un truc à manger", "Pour garder une maison propre", "pour kiffer ta musique"]
+
     def init = { servletContext ->
 
         def adminRole = new Role(authority: "ROLE_ADMIN").save()
@@ -28,16 +33,16 @@ class BootStrap {
                 (1..2).each {
                     Integer annonceIdx ->
                         def annonceInstance = new Annonce(
-                                title: "Titre de l'annonce $annonceIdx",
-                                description: "Description de l'annonce $annonceIdx",
-                                price: 100 * annonceIdx
+                                title: annonceNames[intTabVal],
+                                description: annonceDescription[intTabVal],
+                                price: random.nextInt(500)
                         )
                         (1..2).each {
                             def illustrationname = "grails" + userInstance.id.toString() + annonceIdx.toString() + it.toString() + ".svg"
                             annonceInstance.addToIllustrations(new Illustration(filename: illustrationname))
                         }
+                        intTabVal = intTabVal + 1
                         userInstance.addToAnnonces(annonceInstance)
-
                 }
                 userInstance.save(flush: true, failOnError: true)
         }
