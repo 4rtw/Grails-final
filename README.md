@@ -16,26 +16,27 @@ Ce projet a été réalisé par les étudiants du groupe 6
 #### 2.1) - Besoins fonctionnels
 ##### a) Backend
 #####Sécurité  
--[x] Couche de sécurité `spring-security-core`  
--[x] 3 rôles `ADMIN` `MODERATOR` `CLIENT`  
--[x] Seuls l'user avec le rôle `ADMIN` et `MODERATOR` peuvent accéder au backend  
--[x] `Login` et `Logout`  
+
+- [x] Couche de sécurité `spring-security-core`  
+- [x] 3 rôles `ADMIN` `MODERATOR` `CLIENT`  
+- [x] Seuls l'user avec le rôle `ADMIN` et `MODERATOR` peuvent accéder au backend  
+- [x] `Login` et `Logout`  
 #####Fonctionnalités  
--[x] Gestion des annonces avec leurs illustrations  
--[x] Toutes les opérations `CRUD` sur les **utilisateurs**, les **annonces**, les **illustrations**  
+- [x] Gestion des annonces avec leurs illustrations  
+- [x] Toutes les opérations `CRUD` sur les **utilisateurs**, les **annonces**, les **illustrations**  
 #####Les Bonus (selon le cahier des charges)  
--[ ] Sécurité `spring-security-rest`  
--[x] Moteur de recherche pour filtrer les annonces sur leur titre  
--[ ] Déployement sur Heroku  
+- [ ] Sécurité `spring-security-rest`  
+- [x] Moteur de recherche pour filtrer les annonces sur leur titre  
+- [ ] Déployement sur Heroku  
 ##### b) Frontend
--[ ] Aucune réalisation
+- [ ] Aucune réalisation
 ##### c) API Rest
--[x] Disponible sur l'adresse [http://localhost:8081/projet/api](http://localhost:8081/projet/api)
--[x] Capable de renvoyer du `JSON`
--[X] GET/POST/PUT/PATCH/DELETE sur l'(es) **annonce(s)** et l'(es) **utilisateur(s)**
--[X] Collection POSTMAN: [Résultats des tests](postman/TestResult/ProjetMBDSGroupe6CollectionPM.postman_test_run.json) et [Documentation](postman/Collection/ProjetMBDSGroupe6CollectionPM.postman_collection.json)
+- [x] Disponible sur l'adresse [http://localhost:8081/projet/api](http://localhost:8081/projet/api)
+- [x] Capable de renvoyer du `JSON`
+- [X] GET/POST/PUT/PATCH/DELETE sur l'(es) **annonce(s)** et l'(es) **utilisateur(s)**
+- [X] Collection POSTMAN: [Résultats des tests](postman/TestResult/ProjetMBDSGroupe6CollectionPM.postman_test_run.json) et [Documentation](postman/Collection/ProjetMBDSGroupe6CollectionPM.postman_collection.json)
 #### 2.2) - Besoins non fonctionnels
--[x] Design - [Template Kiaalap](https://github.com/puikinsh/kiaalap)
+- [x] Design - [Template Kiaalap](https://github.com/puikinsh/kiaalap)
 ### Ce qu'on aurait pu faire de plus
--[ ] Hebergement sur Heroku
--[ ] Gestion du mot de passe vide sur la fonctionnalité `Update user`
+- [ ] Hebergement sur Heroku
+- [ ] Gestion du mot de passe vide sur la fonctionnalité `Update user`
