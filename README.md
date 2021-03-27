@@ -19,13 +19,12 @@ Ce projet a été réalisé par les étudiants du groupe 6
 
 - [x] Couche de sécurité `spring-security-core`  
 - [x] 3 rôles disponibles`ADMIN` `MODERATOR` `CLIENT`  
-- [x] Seuls l'user avec le rôle `ADMIN` et `MODERATOR` peuvent accéder au backend  
-- [x] `Login` et `Logout`  
+- [x] Seuls l'user avec le rôle `ADMIN` ou `MODERATOR` peut accéder au backend  
+- [x] `Login` et `Logout` fonctionnels  
 ###### Fonctionnalités  
 - [x] Gestion des annonces avec leurs illustrations  
 - [x] Toutes les opérations `CRUD` sur les **utilisateurs**, les **annonces**, les **illustrations**  
-###### Les Bonus (selon le cahier des charges)  
-- [x] Sécurité `spring-security-rest`  
+###### Les Bonus (selon le cahier des charges)
 - [x] Moteur de recherche pour filtrer les annonces sur leur titre  
 - [ ] Déployement sur Heroku  
 ##### b) Frontend
