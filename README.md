@@ -11,7 +11,7 @@ Ce projet a été réalisé par les étudiants du groupe 6
 #### Login screen
 ![Login](Screenshots/Login_Screen.PNG?raw=true "Login")
 #### Home screen
-![Home](Screenshots/Home_Screen.PNG?raw=true "Home")
+![Home](Screenshots/Home_screen.PNG?raw=true "Home")
 ### 2) Réalisations
 #### 2.1) - Besoins fonctionnels
 ##### a) Backend
