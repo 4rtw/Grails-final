@@ -10,6 +10,30 @@
 
         <div id="list-annonce" class="content scaffold-list" role="main">
             <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+            <div class="row">
+                <p>Here you can try to search for an item</p>
+                <fieldset class="form">
+                    <g:form action="searchAnnonce" method="GET">
+                        <div class="fieldcontain">
+                            <label for="query">Enter a title of an item:</label>
+                            <g:textField name="query" value="${params.query}"/>
+                            <input type="submit" value="Search"/>
+                        </div>
+                    </g:form>
+                </fieldset>
+            </div>
+            <div class="row">
+                <p>Here you can try to filter by a column</p>
+                <fieldset class="form">
+                    <g:form action="filterAnnonce" method="GET">
+                        <div class="fieldcontain">
+                            <label>Select a filter:</label>
+                            <g:select name="filterbycrit" from="${['title', 'description', 'price']}" value="${params.filterbycrit}"/>
+                            <input type="submit" value="Filter"/>
+                        </div>
+                    </g:form>
+                </fieldset>
+            </div>
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
@@ -18,7 +42,7 @@
                     <thead>
                     <tr>
                         <th>
-                            Name
+                            Title
                         </th>
                         <th>
                             Description
@@ -63,6 +87,7 @@
             <div class="pagination">
                 <g:paginate total="${annonceCount ?: 0}" />
             </div>
+
         </div>
     </body>
 </html>

@@ -188,4 +188,29 @@ class AnnonceController {
             '*'{ render status: NOT_FOUND }
         }
     }
+
+    @Secured(['ROLE_ADMIN', 'ROLE_MODO'])
+    def searchAnnonce() {
+        try {
+            def annList = Annonce.createCriteria().list (params) {
+                if ( params.query ) {
+                    ilike("title", "%${params.query}%")
+                }
+            }
+            render (view:'index.gsp',model:[annonceList: annList, annonceCount: annonceService.count(), baseUrl: grailsApplication.config.annonces.illustrations.url])
+        } catch (Exception e) {
+            params.max = Math.min(max ?: 10, 100)
+            render (view:'index.gsp',model:[annonceList: annonceService.list(params), annonceCount: annonceService.count(), baseUrl: grailsApplication.config.annonces.illustrations.url])
+        }
+    }
+
+    @Secured(['ROLE_ADMIN', 'ROLE_MODO'])
+    def filterAnnonce() {
+        try {
+            render (view:'index.gsp',model:[annonceList: Annonce.list(sort:params.filterbycrit), annonceCount: annonceService.count(), baseUrl: grailsApplication.config.annonces.illustrations.url])
+        } catch (Exception e) {
+            params.max = Math.min(max ?: 10, 100)
+            render (view:'index.gsp',model:[annonceList: annonceService.list(params), annonceCount: annonceService.count(), baseUrl: grailsApplication.config.annonces.illustrations.url])
+        }
+    }
 }
