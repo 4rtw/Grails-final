@@ -15,16 +15,16 @@ Ce projet a été réalisé par les étudiants du groupe 6
 ### 2) Réalisations
 #### 2.1) - Besoins fonctionnels
 ##### a) Backend
-#####Sécurité  
+###### Sécurité  
 
 - [x] Couche de sécurité `spring-security-core`  
 - [x] 3 rôles `ADMIN` `MODERATOR` `CLIENT`  
 - [x] Seuls l'user avec le rôle `ADMIN` et `MODERATOR` peuvent accéder au backend  
 - [x] `Login` et `Logout`  
-#####Fonctionnalités  
+###### Fonctionnalités  
 - [x] Gestion des annonces avec leurs illustrations  
 - [x] Toutes les opérations `CRUD` sur les **utilisateurs**, les **annonces**, les **illustrations**  
-#####Les Bonus (selon le cahier des charges)  
+###### Les Bonus (selon le cahier des charges)  
 - [ ] Sécurité `spring-security-rest`  
 - [x] Moteur de recherche pour filtrer les annonces sur leur titre  
 - [ ] Déployement sur Heroku  
