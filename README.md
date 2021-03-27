@@ -9,9 +9,9 @@ Ce projet a été réalisé par les étudiants du groupe 6
 ## Lecoincoin
 ### 1) Aperçu
 #### Login screen
-![Alt text](Screenshots/Login_Screen.PNG?raw=true "Optional Title")
+![Login](Screenshots/Login_Screen.PNG?raw=true "Login")
 #### Home screen
-![Alt text](Screenshots/Home_Screen.PNG?raw=true "Optional Title")
+![Home](Screenshots/Home_Screen.PNG?raw=true "Home")
 ### 2) Réalisations
 #### 2.1) - Besoins fonctionnels
 ##### a) Backend
