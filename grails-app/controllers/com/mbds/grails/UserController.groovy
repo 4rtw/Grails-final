@@ -77,19 +77,16 @@ class UserController {
             return
         }
 
+
         try {
-            UserRole.withTransaction {
-
-                Role userNewRole = Role.findById params.role
-
-                UserRole currentUserRole = UserRole.findByUser(user)
-                Role userCurrentRole = currentUserRole.role
-
-                userService.save(user)
-                UserRole.remove(user,userCurrentRole)
-                UserRole.create(user,userNewRole)
+            userService.save(user)
+            UserRole userRole = UserRole.findByUser(user)
+            Role currentRole = userRole.role
+            Role newRole = Role.findById params.role
+            if (newRole != currentRole){
+                userRole.remove(user,currentRole)
+                UserRole.create(user,newRole,true)
             }
-
         } catch (ValidationException e) {
             respond user.errors, view:'edit'
             return

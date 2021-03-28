@@ -30,16 +30,16 @@
         <fieldset class="form">
 
             <div class="tp-field fieldcontain required">
-                <label for="password"> New Password
-                    <span class="required-indicator">*</span>
-                </label>
-                <g:passwordField class="form-control" name="password" value=""/>
-            </div>
-            <div class="tp-field fieldcontain required">
                 <label for="username">Username
                     <span class="required-indicator">*</span>
                 </label>
                 <g:textField class="form-control" type="text" name="username" value="${this.user.username}"/>
+            </div>
+            <div class="tp-field fieldcontain required">
+                <label for="password"> New Password
+                    <span class="required-indicator">*</span>
+                </label>
+                <g:passwordField class="form-control" name="password" value=""/>
             </div>
             <div class="tp-field fieldcontain">
                 <label>Role</label>
