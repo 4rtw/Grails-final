@@ -77,7 +77,7 @@ class UserController {
             return
         }
 
-
+        
         try {
             userService.save(user)
             UserRole userRole = UserRole.findByUser(user)
