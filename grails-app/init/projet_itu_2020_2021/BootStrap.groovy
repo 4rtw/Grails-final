@@ -19,8 +19,8 @@ class BootStrap {
 
     def init = { servletContext ->
 
-        try{ amazonS3Service.deleteBucket(bucketName)}catch(Exception e){println e}
-        try{ amazonS3Service.createBucket(bucketName)}catch(Exception e){println e}
+        //try{ amazonS3Service.deleteBucket(bucketName)}catch(Exception e){println e}
+        //try{ amazonS3Service.createBucket(bucketName)}catch(Exception e){println e}
 
         def adminRole = new Role(authority: "ROLE_ADMIN").save()
         def modRole = new Role(authority: "ROLE_MODO").save()

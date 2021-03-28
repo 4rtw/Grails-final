@@ -134,8 +134,7 @@ server:
     contextPath: /projet
 annonces:
     illustrations:
-        path:  "D:/Desktop/tp-annonce/grails-app/assets/images/"
-        url: "http://lecoincoin-grp-6.herokuapp.com/projet/assets/"
+        url: "https://bucket-for-grails.s3.us-east-2.amazonaws.com/asset/"
 
 grails:
     plugin:
