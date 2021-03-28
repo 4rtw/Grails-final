@@ -1,6 +1,9 @@
 package com.mbds.grails
 
+import grails.plugin.awssdk.s3.AmazonS3Service
 import grails.plugin.springsecurity.annotation.Secured
+import org.springframework.web.multipart.MultipartFile
+
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import grails.validation.ValidationException
@@ -13,6 +16,8 @@ class AnnonceController {
     AnnonceService annonceService
     IllustrationService illustrationService
     UserService userService
+    AmazonS3Service amazonS3Service
+    final String BUCKET_NAME = 'bucket-for-grails'
 
     @Secured(['ROLE_ADMIN', 'ROLE_MODO'])
     def index(Integer max) {
@@ -38,7 +43,7 @@ class AnnonceController {
         }
 
         //1. Récupérer le fichier dans la requête
-        def f = request.getFile('myFile')
+        MultipartFile f = request.getFile('myFile')
         def a = params.idauthor
         def userChosen = userService.get(a)
         annonce.author = userChosen
@@ -58,8 +63,10 @@ class AnnonceController {
             String todayAsString = df.format(date)
             def filenameR = filenameRSplited[0] + todayAsString + filenameRSplited[1]
             //2. Sauvegarder le fichier localement
-            def path = grailsApplication.config.annonces.illustrations.path + filenameR
-            f.transferTo(new File(path))
+            //def path = grailsApplication.config.annonces.illustrations.path + filenameR
+            //f.transferTo(new File(path))
+            amazonS3Service.storeMultipartFile(BUCKET_NAME,'asset/' + filenameR, f)
+
             //3. Créer un illustration sur le fichier que vous avez sauvegardé
             //4. Attacher l'illustration nouvellement créée à l'annonce
             annonce.addToIllustrations(new Illustration(filename: filenameR))
@@ -115,8 +122,9 @@ class AnnonceController {
             String todayAsString = df.format(date)
             def filenameR = filenameRSplited[0] + todayAsString + filenameRSplited[1]
             //2. Sauvegarder le fichier localement
-            def path = grailsApplication.config.annonces.illustrations.path + filenameR
-            f.transferTo(new File(path))
+            //def path = grailsApplication.config.annonces.illustrations.path + filenameR
+            //f.transferTo(new File(path))
+            amazonS3Service.storeMultipartFile(BUCKET_NAME,'asset/' + filenameR, f)
             //3. Créer un illustration sur le fichier que vous avez sauvegardé
             //4. Attacher l'illustration nouvellement créée à l'annonce
             annonce.addToIllustrations(new Illustration(filename: filenameR))
@@ -136,8 +144,9 @@ class AnnonceController {
     def deleteIllustration() {
         try {
             def illustration = illustrationService.get(params.illustrationId)
-            def file = new File(grailsApplication.config.annonces.illustrations.path + illustration.filename)
-            file.delete()
+            //def file = new File(grailsApplication.config.annonces.illustrations.path + illustration.filename)
+            //file.delete()
+            amazonS3Service.deleteFile(BUCKET_NAME, 'asset/'+illustration.filename)
             illustrationService.delete(params.illustrationId)
             redirect action: "edit", method: "GET", id: params.annonceId
         } catch (Exception e) {

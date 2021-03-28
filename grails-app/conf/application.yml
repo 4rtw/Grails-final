@@ -102,7 +102,7 @@ environments:
     development:
         dataSource:
             dbCreate: create-drop
-            url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:mysql://mysql-artware.alwaysdata.net:3306/artware_tpgrails
     test:
         dataSource:
             dbCreate: update
@@ -134,5 +134,11 @@ server:
     contextPath: /projet
 annonces:
     illustrations:
-        path:  "/app/grails-app/assets/images/"
-        url: "http://lecoincoin-grp-6.herokuapp.com/projet/assets/"
+        url: "https://bucket-for-grails.s3.us-east-2.amazonaws.com/asset/"
+
+grails:
+    plugin:
+        awssdk:
+            accessKey: AKIAZYO3INB6ORCZFOFK
+            secretKey: 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
+            region: us-east-2
