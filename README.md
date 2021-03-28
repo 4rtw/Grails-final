@@ -18,7 +18,7 @@ Ce projet a été réalisé par les étudiants du groupe 6
 ###### Sécurité  
 
 - [x] Couche de sécurité `spring-security-core`  
-- [x] 3 rôles disponibles`ADMIN` `MODERATOR` `CLIENT`  
+- [x] 3 rôles disponibles`ADMIN` `MODERATOR` `CUSTOMER`  
 - [x] Seuls l'user avec le rôle `ADMIN` ou `MODERATOR` peut accéder au backend  
 - [x] `Login` et `Logout` fonctionnels  
 ###### Fonctionnalités  
