@@ -27,8 +27,9 @@ Ce projet a été réalisé par les étudiants du groupe 6
 ###### Les Bonus (selon le cahier des charges)
 - [x] Recherche et filtre simple sur les annonces  
 - [x] Déployement sur Heroku  
-  
-- [X] Stockage des fichiers sur Amazon S3
+###### Autres
+- [x] Stockage des fichiers sur `Amazon S3`
+- [x] Persistance `MySQL` hébergé sur [AlwaysData](https://www.alwaysdata.com/fr/)
 ##### b) Frontend
 - [ ] Aucune réalisation
 ##### c) API Rest
