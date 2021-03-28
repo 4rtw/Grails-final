@@ -126,7 +126,7 @@
 %{--                                    <span class="no-icon">Logout</span>--}%
 %{--                                </a>--}%
                                 <g:form controller="logout">
-                                    <g:submitButton class="dropdown-item navbar-dark color-light" name="Submit" value="Se deconnecter" />
+                                    <g:submitButton class="dropdown-item navbar-dark color-light" name="Submit" value="Logout" />
                                 </g:form>
                             </li>
                         </ul>
