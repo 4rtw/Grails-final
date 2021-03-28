@@ -34,7 +34,7 @@ Ce projet a été réalisé par les étudiants du groupe 6
 - [ ] Aucune réalisation
 ##### c) API Rest
 ###### Sécurité
-Pour s'authentier sur l'API, il faut utiliser la methode `POST` sur http://lecoincoin-grp-6.herokuapp.com/projet/api/login avec en body  
+Pour s'authentier sur l'API et obtenir le token d'authentification, il faut utiliser la methode `POST` sur http://lecoincoin-grp-6.herokuapp.com/projet/api/login avec en body  
 `{
     "username": "admin",
     "password": "password"
