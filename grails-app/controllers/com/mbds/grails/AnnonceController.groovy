@@ -1,6 +1,9 @@
 package com.mbds.grails
 
+import grails.plugin.awssdk.s3.AmazonS3Service
 import grails.plugin.springsecurity.annotation.Secured
+import org.springframework.web.multipart.MultipartFile
+
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import grails.validation.ValidationException
@@ -13,6 +16,7 @@ class AnnonceController {
     AnnonceService annonceService
     IllustrationService illustrationService
     UserService userService
+    AmazonS3Service amazonS3Service
 
     @Secured(['ROLE_ADMIN', 'ROLE_MODO'])
     def index(Integer max) {
@@ -38,7 +42,7 @@ class AnnonceController {
         }
 
         //1. Récupérer le fichier dans la requête
-        def f = request.getFile('myFile')
+        MultipartFile f = request.getFile('myFile')
         def a = params.idauthor
         def userChosen = userService.get(a)
         annonce.author = userChosen
@@ -59,7 +63,15 @@ class AnnonceController {
             def filenameR = filenameRSplited[0] + todayAsString + filenameRSplited[1]
             //2. Sauvegarder le fichier localement
             def path = grailsApplication.config.annonces.illustrations.path + filenameR
-            f.transferTo(new File(path))
+            //f.transferTo(new File(path))
+            //
+            //
+            try{
+                amazonS3Service.storeMultipartFile('bucket-for-grails', f.originalFilename, f)
+            }
+            catch(Exception e){
+                println e
+            }
             //3. Créer un illustration sur le fichier que vous avez sauvegardé
             //4. Attacher l'illustration nouvellement créée à l'annonce
             annonce.addToIllustrations(new Illustration(filename: filenameR))

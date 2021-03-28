@@ -15,11 +15,12 @@ class BootStrap {
     def annonceNames = ["Samsung s20", "Violon", "Fourchette", "Olive", "Liquide vaisselle", "Ecouteur"]
     def annonceDescription = ["Un super téléphone", "Le violon du plus grand musicien", "Couvert en or", "un truc à manger", "Pour garder une maison propre", "pour kiffer ta musique"]
     AmazonS3Service amazonS3Service
+    final String bucketName = "bucket-for-grails"
 
     def init = { servletContext ->
 
-        try{ amazonS3Service.deleteBucket('my-bucket')}catch(Exception e){}
-        try{ amazonS3Service.createBucket('my-bucket')}catch(Exception e){}
+        try{ amazonS3Service.deleteBucket(bucketName)}catch(Exception e){println e}
+        try{ amazonS3Service.createBucket(bucketName)}catch(Exception e){println e}
 
         def adminRole = new Role(authority: "ROLE_ADMIN").save()
         def modRole = new Role(authority: "ROLE_MODO").save()

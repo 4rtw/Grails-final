@@ -142,4 +142,4 @@ grails:
         awssdk:
             accessKey: AKIAZYO3INB6ORCZFOFK
             secretKey: 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
-            region: eu-east-2
+            region: us-east-2
