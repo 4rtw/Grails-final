@@ -38,12 +38,12 @@
                 <ul class="nav">
                     <li class="nav-item active">
                         <g:link class="nav-link" controller="annonce" action="index">
-                             Annonces
+                             Ads
                         </g:link>
                     </li>
                     <li class="nav-item active">
                         <g:link class="nav-link" controller="user" action="index">
-                            Utilisateurs
+                            Users
                         </g:link>
                     </li>
                     
@@ -123,7 +123,7 @@
                             </li>-->
                             <li class="nav-item">
 %{--                                <a class="nav-link" href="/logout/index">--}%
-%{--                                    <span class="no-icon">Se deconnecter</span>--}%
+%{--                                    <span class="no-icon">Logout</span>--}%
 %{--                                </a>--}%
                                 <g:form controller="logout">
                                     <g:submitButton class="dropdown-item navbar-dark color-light" name="Submit" value="Se deconnecter" />
