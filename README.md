@@ -6,7 +6,7 @@ Ce projet a été réalisé par les étudiants du groupe 6
 33 - RAMAROSON Andon’ny Aina Michael  
 43 - RANDRIANIRINA Andy Nasandratra  
 44 - RANDRIANJAFY Stephane Michel
-## Lecoincoin
+## Lecoincoin [http://lecoincoin-grp-6.herokuapp.com/projet](http://lecoincoin-grp-6.herokuapp.com/projet)
 ### 1) Aperçu
 #### Login screen
 ![Login](Screenshots/Login_Screen.PNG?raw=true "Login")
@@ -33,7 +33,7 @@ Ce projet a été réalisé par les étudiants du groupe 6
 ###### Sécurité
 - [x] Sécurité `spring-security-rest`  
 ###### Fonctionnalités
-- [x] Disponible sur l'adresse [http://localhost:8081/projet/api](http://localhost:8081/projet/api)
+- [x] Disponible sur l'adresse [http://lecoincoin-grp-6.herokuapp.com/projet/api](http://lecoincoin-grp-6.herokuapp.com/projet/api)
 - [x] Capable de renvoyer du `JSON` et du `XML`
 - [X] GET/POST/PUT/PATCH/DELETE sur l'(es) **annonce(s)** et l'(es) **utilisateur(s)**
 - [X] Collection POSTMAN: [Résultats des tests](postman/TestResult/ProjetMBDSGroupe6CollectionPM.postman_test_run.json) et [Documentation](postman/Collection/ProjetMBDSGroupe6CollectionPM.postman_collection.json)
