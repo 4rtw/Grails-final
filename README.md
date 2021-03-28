@@ -6,7 +6,7 @@ Ce projet a été réalisé par les étudiants du groupe 6
 33 - RAMAROSON Andon’ny Aina Michael  
 43 - RANDRIANIRINA Andy Nasandratra  
 44 - RANDRIANJAFY Stephane Michel
-## Lecoincoin [http://lecoincoin-grp-6.herokuapp.com/projet](http://lecoincoin-grp-6.herokuapp.com/projet)
+## Lecoincoin [https://lecoincoin-grp-6.herokuapp.com/projet](https://lecoincoin-grp-6.herokuapp.com/projet)
 ### 1) Aperçu
 #### Login screen
 ![Login](Screenshots/Login_Screen.PNG?raw=true "Login")
