@@ -109,7 +109,7 @@ environments:
             url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     production:
         dataSource:
-            dbCreate: create-drop
+            dbCreate: none
             url: jdbc:mysql://mysql-artware.alwaysdata.net:3306/artware_tpgrails
             properties:
                 jmxEnabled: true
