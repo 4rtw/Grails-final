@@ -94,9 +94,9 @@ hibernate:
 dataSource:
     pooled: true
     jmxExport: true
-    driverClassName: org.h2.Driver
-    username: sa
-    password: ''
+    driverClassName: com.mysql.jdbc.Driver
+    username: artware
+    password: T4Bvj@ZY73QyR$659GXgyEZa
 
 environments:
     development:
@@ -109,8 +109,8 @@ environments:
             url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     production:
         dataSource:
-            dbCreate: none
-            url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            dbCreate: create-drop
+            url: jdbc:mysql://mysql-artware.alwaysdata.net:3306/artware_tpgrails
             properties:
                 jmxEnabled: true
                 initialSize: 5
@@ -134,5 +134,5 @@ server:
     contextPath: /projet
 annonces:
     illustrations:
-        path:  "D:/MBDS/MrGalli/tp-annonce/grails-app/assets/images/"
-        url: "http://localhost:8081/projet/assets/"
+        path:  "/app/grails-app/assets/images/"
+        url: "http://lecoincoin-grp-6.herokuapp.com/projet/assets/"
