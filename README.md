@@ -26,7 +26,9 @@ Ce projet a été réalisé par les étudiants du groupe 6
 - [x] Toutes les opérations `CRUD` sur les **utilisateurs**, les **annonces**, les **illustrations**  
 ###### Les Bonus (selon le cahier des charges)
 - [x] Recherche et filtre simple sur les annonces  
-- [ ] Déployement sur Heroku (En attente) 
+- [x] Déployement sur Heroku  
+  
+- [X] Stockage des fichiers sur Amazon S3
 ##### b) Frontend
 - [ ] Aucune réalisation
 ##### c) API Rest
