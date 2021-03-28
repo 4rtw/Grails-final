@@ -12,8 +12,9 @@ class BootStrap {
 
     def random = new Random()
     def intTabVal = 0
-    def annonceNames = ["Samsung s20", "Violon", "Fourchette", "Olive", "Liquide vaisselle", "Ecouteur"]
-    def annonceDescription = ["Un super téléphone", "Le violon du plus grand musicien", "Couvert en or", "un truc à manger", "Pour garder une maison propre", "pour kiffer ta musique"]
+    def annonceNames = ["Samsung s20", "Violin", "Fork", "Olive", "Dishwashing liquid", "Earphone"]
+    def annonceDescription = ["A great phone", "The greatest musician's violin", "
+Covered in gold", "something to eat", "To keep a clean house", "To enjoy your music"]
     AmazonS3Service amazonS3Service
     final String bucketName = "bucket-for-grails"
 
@@ -27,8 +28,8 @@ class BootStrap {
         def userRole = new Role(authority: "ROLE_USER").save()
 
         def adminUser = new User(username: "admin", password: "password").save()
-        def modUser = new User(username: "moderateur", password: "password").save()
-        def userUser = new User(username: "client", password: "password").save()
+        def modUser = new User(username: "moderator", password: "password").save()
+        def userUser = new User(username: "customer", password: "password").save()
 
         UserRole.create adminUser, adminRole, true
         UserRole.create(modUser, modRole, true)
