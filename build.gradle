@@ -63,6 +63,7 @@ dependencies {
     compile "org.grails.plugins:spring-security-rest:2.0.0.RC1"
 
     runtime 'mysql:mysql-connector-java:5.1.29'
+    compile 'org.grails.plugins:aws-sdk-s3:2.2.12'
 }
 
 bootRun {

@@ -5,6 +5,7 @@ import com.mbds.grails.Illustration
 import com.mbds.grails.Role
 import com.mbds.grails.User
 import com.mbds.grails.UserRole
+import grails.plugin.awssdk.s3.AmazonS3Service
 
 
 class BootStrap {
@@ -13,8 +14,12 @@ class BootStrap {
     def intTabVal = 0
     def annonceNames = ["Samsung s20", "Violon", "Fourchette", "Olive", "Liquide vaisselle", "Ecouteur"]
     def annonceDescription = ["Un super téléphone", "Le violon du plus grand musicien", "Couvert en or", "un truc à manger", "Pour garder une maison propre", "pour kiffer ta musique"]
+    AmazonS3Service amazonS3Service
 
     def init = { servletContext ->
+
+        try{ amazonS3Service.deleteBucket('my-bucket')}catch(Exception e){}
+        try{ amazonS3Service.createBucket('my-bucket')}catch(Exception e){}
 
         def adminRole = new Role(authority: "ROLE_ADMIN").save()
         def modRole = new Role(authority: "ROLE_MODO").save()
