@@ -34,6 +34,11 @@ Ce projet a été réalisé par les étudiants du groupe 6
 - [ ] Aucune réalisation
 ##### c) API Rest
 ###### Sécurité
+Pour s'authentier sur l'API, il faut utiliser la methode `POST` sur http://lecoincoin-grp-6.herokuapp.com/projet/api/login avec en body  
+`{
+    "username": "admin",
+    "password": "password"
+}`
 - [x] Sécurité `spring-security-rest`  
 ###### Fonctionnalités
 - [x] Disponible sur l'adresse [http://lecoincoin-grp-6.herokuapp.com/projet/api](http://lecoincoin-grp-6.herokuapp.com/projet/api)
@@ -44,3 +49,4 @@ Ce projet a été réalisé par les étudiants du groupe 6
 - [x] Design - [Template Kiaalap](https://github.com/puikinsh/kiaalap)
 ### Ce qu'on aurait pu faire de plus
 - [ ] Gestion du mot de passe vide sur la fonctionnalité `Update user`
+- [ ] Filtre dans le sens inverse (ordre décroissant sur les filtres)
