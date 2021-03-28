@@ -44,7 +44,7 @@ Pour s'authentier sur l'API, il faut utiliser la methode `POST` sur http://lecoi
 - [x] Disponible sur l'adresse [http://lecoincoin-grp-6.herokuapp.com/projet/api](http://lecoincoin-grp-6.herokuapp.com/projet/api)
 - [x] Capable de renvoyer du `JSON` et du `XML`
 - [X] GET/POST/PUT/PATCH/DELETE sur l'(es) **annonce(s)** et l'(es) **utilisateur(s)**
-- [X] Collection POSTMAN: [Résultats des tests](postman/TestResult/ProjetMBDSGroupe6CollectionPM.postman_test_run.json) et [Documentation](postman/Collection/ProjetMBDSGroupe6CollectionPM.postman_collection.json)
+- [X] Collection POSTMAN: [Documentation](postman/Collection/ProjetMBDSGroupe6CollectionPM.postman_collection.json)
 #### 2.2) - Besoins non fonctionnels
 - [x] Design - [Template Kiaalap](https://github.com/puikinsh/kiaalap)
 ### Ce qu'on aurait pu faire de plus
